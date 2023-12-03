@@ -1,3 +1,5 @@
+import "normalize.css";
+
 import Header from "./componets/header/Header";
 
 function App() {
