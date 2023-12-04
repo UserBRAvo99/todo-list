@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   setting: {
-    theme: "",
+    theme: {},
     language: "",
   },
 };
@@ -10,7 +10,11 @@ const initialState = {
 const settingSlice = createSlice({
   name: "settingTodo",
   initialState,
-  reducers: {},
+  reducers: {
+    // changeTheme: (state, actions) => {
+    //   state.theme = classic;
+    // },
+  },
 });
 
 export const settingSliceReducer = settingSlice.reducer;
