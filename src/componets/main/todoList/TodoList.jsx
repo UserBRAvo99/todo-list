@@ -1,15 +1,34 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo, changeTodo, deleteTodo } from "../../../redux/todoSlice";
 import styled from "styled-components";
 
 const TodoList = () => {
+  const [todoList, setTodoList] = useState([]);
+
   const [value, setValue] = useState("");
 
   const { todos } = useSelector((state) => state.todoListSlice);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTodoList(todos);
+  }, [todos]);
+
+  const handleFilterTodo = (e) => {
+    const filter = e.target.name;
+    if (filter === "complete") {
+      const filterComplete = todos.filter((todo) => todo.done === true);
+      return setTodoList(filterComplete);
+    }
+    if (filter === "incomplete") {
+      const filterComplete = todos.filter((todo) => todo.done === false);
+      return setTodoList(filterComplete);
+    }
+    setTodoList(todos);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,11 +57,34 @@ const TodoList = () => {
         />
         <button>add</button>
       </form>
+      <div>
+        <ul>
+          <li>
+            <button onClick={handleFilterTodo} name="all">
+              All
+            </button>
+          </li>
+          <li>
+            <button onClick={handleFilterTodo} name="complete">
+              Complete
+            </button>
+          </li>
+          <li>
+            <button onClick={handleFilterTodo} name="incomplete">
+              Incomplete
+            </button>
+          </li>
+        </ul>
+      </div>
       <List>
-        {todos.map((todo) => {
+        {todoList.map((todo) => {
           return (
             <Item key={todo.id}>
-              <input onChange={() => changeCheckBox(todo)} type="checkbox" />
+              <Input
+                onChange={() => changeCheckBox(todo)}
+                type="checkbox"
+                checked={todo.done}
+              />
               <Text $done={todo.done}>{todo.text}</Text>
               <button onClick={() => handleDelete(todo.id)}>Delete</button>
             </Item>
@@ -71,6 +113,8 @@ const Item = styled.li`
   background-color: pink;
   margin: 0 auto;
 `;
+
+const Input = styled.input``;
 
 const Text = styled.p`
   text-decoration: ${({ $done }) => ($done ? "line-through" : "none")};
