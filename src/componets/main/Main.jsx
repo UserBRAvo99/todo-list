@@ -14,5 +14,5 @@ export default Main;
 
 const MainTodo = styled.main`
   width: 100%;
-  min-height: calc(100vh - 106.8px);
+  min-height: calc(100vh - 121.8px);
 `;
