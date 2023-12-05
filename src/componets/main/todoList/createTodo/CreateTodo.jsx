@@ -44,10 +44,11 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
+  padding: 15px 0;
 `;
 
 const Form = styled.form`
+  width: 100%;
   padding: 10px;
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
   background-color: ${(props) => props.theme.colorHeader};
@@ -56,10 +57,12 @@ const Form = styled.form`
 
 const WrapperInput = styled.div`
   display: flex;
+  justify-content: space-between;
+  gap: 15px;
 `;
 
 const Input = styled.input`
-  margin-right: 30px;
+  width: 100%;
   padding: 5px;
   border-radius: 5px;
   border: transparent;
@@ -68,11 +71,12 @@ const Input = styled.input`
 const Btn = styled.button`
   position: relative;
   align-items: center;
+  display: block;
   width: 30px;
   height: 30px;
   border-radius: 10px;
   border: transparent;
-  background-color: ${(props) => props.theme.colorBtnAdd};
+  background-color: ${(props) => props.theme.colorBtnAddBkg};
   & svg {
     width: 25px;
     height: 25px;
@@ -80,6 +84,6 @@ const Btn = styled.button`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* fill: ${(props) => props.theme.colorInputAdd}; */
+    fill: ${(props) => props.theme.colorBtnAdd};
   }
 `;

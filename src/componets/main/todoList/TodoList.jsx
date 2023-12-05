@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeTodo, deleteTodo } from "../../../redux/todoSlice";
 import styled from "styled-components";
 import CreateTodo from "./createTodo/CreateTodo";
+import FilterTodo from "./filterTodo/FilterTodo";
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
@@ -30,13 +31,6 @@ const TodoList = () => {
     setTodoList(todos);
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const newTodo = { id: nanoid(), done: false, text: value };
-  //   dispatch(addTodo(newTodo));
-  //   setValue("");
-  // };
-
   const handleDelete = (id) => {
     dispatch(deleteTodo(id));
   };
@@ -47,55 +41,26 @@ const TodoList = () => {
 
   return (
     <div className="container">
-      <div>
-        {/* <form onSubmit={handleSubmit}>
-          <input
-            value={value}
-            type="text"
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
-          />
-          <button>add</button>
-        </form> */}
-        <CreateTodo />
-        <div>
-          <ul>
-            <li>
-              <button onClick={handleFilterTodo} name="all">
-                All
-              </button>
-            </li>
-            <li>
-              <button onClick={handleFilterTodo} name="complete">
-                Complete
-              </button>
-            </li>
-            <li>
-              <button onClick={handleFilterTodo} name="incomplete">
-                Incomplete
-              </button>
-            </li>
-          </ul>
-        </div>
-        <List>
-          {todoList.map((todo) => {
-            return (
-              <Item key={todo.id}>
-                <Input
-                  onChange={() => changeCheckBox(todo)}
-                  type="checkbox"
-                  checked={todo.done}
-                />
-                <WrapperText>
-                  <Text $done={todo.done}>{todo.text}</Text>
-                </WrapperText>
-                <button onClick={() => handleDelete(todo.id)}>Delete</button>
-              </Item>
-            );
-          })}
-        </List>
-      </div>
+      <CreateTodo />
+      <FilterTodo filterTodo={handleFilterTodo} />
+
+      <List>
+        {todoList.map((todo) => {
+          return (
+            <Item key={todo.id}>
+              <Input
+                onChange={() => changeCheckBox(todo)}
+                type="checkbox"
+                checked={todo.done}
+              />
+              <WrapperText>
+                <Text $done={todo.done}>{todo.text}</Text>
+              </WrapperText>
+              <button onClick={() => handleDelete(todo.id)}>Delete</button>
+            </Item>
+          );
+        })}
+      </List>
     </div>
   );
 };

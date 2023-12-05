@@ -3,18 +3,22 @@ import { RiTodoLine } from "react-icons/ri";
 
 const Header = () => {
   return (
-    <>
+    <Wrapper>
       <HeaderElement>
         <WrapperLogo>
           <RiTodoLine />
           <Title>Todo</Title>
         </WrapperLogo>
       </HeaderElement>
-    </>
+    </Wrapper>
   );
 };
 
 export default Header;
+
+const Wrapper = styled.header`
+  padding-bottom: 15px;
+`;
 
 const HeaderElement = styled.header`
   display: flex;
