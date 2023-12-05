@@ -12,7 +12,8 @@ const CreateTodo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newTodo = { id: nanoid(), done: false, text: value };
+    if (value.trim() === "") return;
+    const newTodo = { id: nanoid(), done: false, text: value.trim() };
     dispatch(addTodo(newTodo));
     setValue("");
   };
@@ -62,7 +63,7 @@ const WrapperInput = styled.div`
 `;
 
 const Input = styled.input`
-  width: 100%;
+  width: 80%;
   padding: 5px;
   border-radius: 5px;
   border: transparent;
@@ -71,15 +72,14 @@ const Input = styled.input`
 const Btn = styled.button`
   position: relative;
   align-items: center;
-  display: block;
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   border: transparent;
   background-color: ${(props) => props.theme.colorBtnAddBkg};
   & svg {
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     position: absolute;
     top: 50%;
     left: 50%;

@@ -38,6 +38,7 @@ const List = styled.ul`
   background-color: ${(props) => props.theme.colorListBkg};
   padding: 15px;
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
+  box-shadow: ${(props) => props.theme.shadowHeader};
 `;
 
 const Item = styled.li``;

@@ -4,11 +4,10 @@ import { changeTodo, deleteTodo } from "../../../redux/todoSlice";
 import styled from "styled-components";
 import CreateTodo from "./createTodo/CreateTodo";
 import FilterTodo from "./filterTodo/FilterTodo";
+import { IoClose } from "react-icons/io5";
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
-
-  // const [value, setValue] = useState("");
 
   const { todos } = useSelector((state) => state.todoListSlice);
 
@@ -40,10 +39,9 @@ const TodoList = () => {
   };
 
   return (
-    <div className="container">
+    <>
       <CreateTodo />
       <FilterTodo filterTodo={handleFilterTodo} />
-
       <List>
         {todoList.map((todo) => {
           return (
@@ -56,12 +54,14 @@ const TodoList = () => {
               <WrapperText>
                 <Text $done={todo.done}>{todo.text}</Text>
               </WrapperText>
-              <button onClick={() => handleDelete(todo.id)}>Delete</button>
+              <Btn onClick={() => handleDelete(todo.id)}>
+                <IoClose />
+              </Btn>
             </Item>
           );
         })}
       </List>
-    </div>
+    </>
   );
 };
 
@@ -74,18 +74,21 @@ const List = styled.ul`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+  padding: 15px 0;
 `;
 
 const Item = styled.li`
   display: flex;
   width: 100%;
-  gap: 20px;
+  gap: 15px;
   justify-content: space-between;
-  padding: 20px;
-  background-color: pink;
+  padding: 10px;
+  background-color: ${(props) => props.theme.colorBkgItemTodo};
+  border: solid 1px ${(props) => props.theme.colorBorderItemTodo};
   margin: 0 auto;
-  border-radius: 14px;
+  border-radius: ${(props) => props.theme.borderRadiusFormItem};
   align-items: center;
+  box-shadow: ${(props) => props.theme.shadowHeader};
 `;
 
 const Input = styled.input``;
@@ -97,4 +100,22 @@ const WrapperText = styled.div`
 
 const Text = styled.p`
   text-decoration: ${({ $done }) => ($done ? "line-through" : "none")};
+`;
+const Btn = styled.button`
+  position: relative;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: transparent;
+  background-color: ${(props) => props.theme.colorBkgBtnItemTodo};
+  & svg {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: ${(props) => props.theme.colorBtnAdd};
+  }
 `;

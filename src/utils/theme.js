@@ -13,8 +13,18 @@ export const forest = {
   colorSvgHeader: "rgb(255, 255, 255)",
   // component create todo
   borderRadiusFormItem: "10px",
-  colorBtnAddBkg: "rgb(113, 22, 43)",
+  colorBtnAddBkg: "rgb(148, 67, 85)",
   colorBtnAdd: "rgb(255,255,255)",
   // component create filter todo
-  colorListBkg: "rgb(113, 22, 43)",
+  colorListBkg: "rgb(148, 67, 85)",
+
+  // component create main
+
+  // component todo item
+  colorBkgItemTodo: "rgb(225,239,239)",
+  colorBorderItemTodo: "rgb(22, 113, 92)",
+  colorBkgBtnItemTodo: "rgb(148, 67, 85)",
+  colorBkgBtnSvgItemTodo: "rgb(255,255,255)",
+  // component todo item
+  colorBkgFooter: "rgb(22, 113, 92)",
 };
