@@ -43,9 +43,14 @@ export default CreateTodo;
 
 const Wrapper = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   padding: 15px 0;
+  @media screen and (min-width: 530px) {
+    width: 500px;
+    margin: 0 auto;
+  }
 `;
 
 const Form = styled.form`

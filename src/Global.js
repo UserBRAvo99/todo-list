@@ -19,8 +19,18 @@ p, button {
 }
 
 .container {
-  padding: 0 20px
+  padding: 0 18px;
+  @media screen and (min-width: 767px) {
+    padding: 0 30px;
+  }
+  @media screen and (min-width: 1023px) {
+    padding: 0 60px;
+  }
+  @media screen and (min-width: 1439px) {
+    padding: 0 120px;
+  }
 }
+
 body {
 font-family: ${font.fontFamily};
 font-size: ${font.fontSize};

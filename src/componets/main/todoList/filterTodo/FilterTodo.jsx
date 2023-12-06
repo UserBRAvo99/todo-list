@@ -34,11 +34,17 @@ export default FilterTodo;
 
 const Wrapper = styled.ul`
   padding: 15px 0;
+  width: 100%;
+  @media screen and (min-width: 530px) {
+    width: 500px;
+    margin: 0 auto;
+  }
 `;
 
 const List = styled.ul`
   display: flex;
   width: 100%;
+  min-height: 56px;
   justify-content: space-around;
   height: auto;
   background-color: ${(props) => props.theme.colorListBkg};

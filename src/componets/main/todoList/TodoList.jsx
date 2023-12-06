@@ -74,6 +74,12 @@ export default TodoList;
 
 const WrapperCreateAndFilter = styled.div`
   display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 767px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
 `;
 
 const List = styled.ul`
@@ -99,6 +105,14 @@ const Item = styled.li`
   align-items: center;
   box-shadow: ${(props) => props.theme.shadowHeader};
   position: relative;
+  @media screen and (min-width: 530px) {
+    width: 500px;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 767px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 `;
 
 const Input = styled.input`
