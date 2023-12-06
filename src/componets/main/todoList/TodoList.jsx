@@ -40,8 +40,10 @@ const TodoList = () => {
 
   return (
     <>
-      <CreateTodo />
-      <FilterTodo filterTodo={handleFilterTodo} />
+      <WrapperCreateAndFilter>
+        <CreateTodo />
+        <FilterTodo filterTodo={handleFilterTodo} />
+      </WrapperCreateAndFilter>
       <List>
         {todoList.map((todo) => {
           return (
@@ -69,6 +71,10 @@ const TodoList = () => {
 };
 
 export default TodoList;
+
+const WrapperCreateAndFilter = styled.div`
+  display: flex;
+`;
 
 const List = styled.ul`
   display: flex;

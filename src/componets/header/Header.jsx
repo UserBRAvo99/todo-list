@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { RiTodoLine } from "react-icons/ri";
+import { font } from "../../utils/font";
 
 const Header = () => {
   return (
@@ -43,4 +44,7 @@ const WrapperLogo = styled.div`
 
 const Title = styled.h1`
   color: ${(props) => props.theme.textColorWhite};
+  font-family: ${font.fontFamily};
+  font-size: 36px;
+  font-weight: 700;
 `;

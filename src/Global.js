@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { font } from "./utils/font";
 
 const Global = createGlobalStyle`
 * {
@@ -19,6 +20,14 @@ p, button {
 
 .container {
   padding: 0 20px
+}
+body {
+font-family: ${font.fontFamily};
+font-size: ${font.fontSize};
+font-style: ${font.fontStyle};
+font-weight: ${font.fontWeight};
+line-height: ${font.lineHeight};
+letter-spacing: ${font.letterSpacing};
 }
 `;
 
