@@ -4,7 +4,7 @@ import { changeTodo, deleteTodo } from "../../../redux/todoSlice";
 import styled from "styled-components";
 import CreateTodo from "./createTodo/CreateTodo";
 import FilterTodo from "./filterTodo/FilterTodo";
-import { IoClose } from "react-icons/io5";
+import { IoCheckmarkSharp, IoClose } from "react-icons/io5";
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
@@ -46,11 +46,14 @@ const TodoList = () => {
         {todoList.map((todo) => {
           return (
             <Item key={todo.id}>
-              <Input
-                onChange={() => changeCheckBox(todo)}
-                type="checkbox"
-                checked={todo.done}
-              />
+              <label>
+                <Input
+                  onChange={() => changeCheckBox(todo)}
+                  type="checkbox"
+                  checked={todo.done}
+                />
+                <Span>{todo.done && <IoCheckmarkSharp />}</Span>
+              </label>
               <WrapperText>
                 <Text $done={todo.done}>{todo.text}</Text>
               </WrapperText>
@@ -74,7 +77,7 @@ const List = styled.ul`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  padding: 15px 0;
+  padding: 15px 0 60px 0;
 `;
 
 const Item = styled.li`
@@ -89,9 +92,35 @@ const Item = styled.li`
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
   align-items: center;
   box-shadow: ${(props) => props.theme.shadowHeader};
+  position: relative;
 `;
 
-const Input = styled.input``;
+const Input = styled.input`
+  opacity: 0;
+`;
+
+const Span = styled.span`
+  display: flex;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: solid 1px black;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translate(-50%, -50%);
+  & svg {
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 28px;
+    height: 28px;
+    color: ${(props) => props.theme.colorChecked};
+  }
+`;
 
 const WrapperText = styled.div`
   word-wrap: break-word;

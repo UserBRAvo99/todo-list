@@ -25,6 +25,7 @@ export const forest = {
   colorBorderItemTodo: "rgb(22, 113, 92)",
   colorBkgBtnItemTodo: "rgb(148, 67, 85)",
   colorBkgBtnSvgItemTodo: "rgb(255,255,255)",
+  colorChecked: "rgb(148, 67, 85)",
   // component todo item
   colorBkgFooter: "rgb(22, 113, 92)",
   shadowFooter: "0px -8px 5px 0px rgba(0, 0, 0, 0.65)",
