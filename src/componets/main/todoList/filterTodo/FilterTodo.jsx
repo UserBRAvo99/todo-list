@@ -10,9 +10,15 @@ const FilterTodo = ({ filterTodo }) => {
           </Btn>
         </Item>
         <Item>
+          <Span>|</Span>
+        </Item>
+        <Item>
           <Btn onClick={filterTodo} name="complete">
             Complete
           </Btn>
+        </Item>
+        <Item>
+          <Span>|</Span>
         </Item>
         <Item>
           <Btn onClick={filterTodo} name="incomplete">
@@ -36,9 +42,10 @@ const List = styled.ul`
   justify-content: space-around;
   height: auto;
   background-color: ${(props) => props.theme.colorListBkg};
-  padding: 15px;
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
   box-shadow: ${(props) => props.theme.shadowHeader};
+  align-items: center;
+  padding: 5px;
 `;
 
 const Item = styled.li``;
@@ -46,5 +53,12 @@ const Item = styled.li``;
 const Btn = styled.button`
   border: transparent;
   background-color: transparent;
+  color: ${(props) => props.theme.textColorWhite};
+  border-radius: ${(props) => props.theme.borderRadiusFormItem};
+  padding: 10px;
+`;
+
+const Span = styled.span`
+  color: inherit;
   color: ${(props) => props.theme.textColorWhite};
 `;

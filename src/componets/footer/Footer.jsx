@@ -12,4 +12,5 @@ const FooterTodo = styled.footer`
   height: 30px;
   background-color: ${(props) => props.theme.colorBkgFooter};
   border-radius: 14px 14px 0 0;
+  box-shadow: ${(props) => props.theme.shadowFooter};
 `;
