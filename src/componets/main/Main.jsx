@@ -1,5 +1,3 @@
-"react-redux";
-
 import { MainTodo } from "./main.style";
 import TodoList from "./todoList/TodoList";
 
