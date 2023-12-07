@@ -4,7 +4,7 @@ import { changeTodo, deleteTodo } from "../../../redux/todoSlice";
 import CreateTodo from "./createTodo/CreateTodo";
 import FilterTodo from "./filterTodo/FilterTodo";
 import { changeSortListTodo } from "../../../redux/settings";
-import OneItemTodo from "./oneItemTodo/oneItemTodo";
+import OneItemTodo from "./oneItemTodo/OneItemTodo";
 
 import { List, WrapperCreateAndFilter } from "./todoList.style";
 
