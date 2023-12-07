@@ -41,6 +41,9 @@ export const Btn = styled.button`
   border-radius: 50%;
   border: transparent;
   background-color: ${(props) => props.theme.colorBtnAddBkg};
+  fill: ${(props) => props.theme.colorBtnAdd};
+  transition: ${(props) => props.theme.transitionHover};
+  cursor: pointer;
   & svg {
     width: 22px;
     height: 22px;
@@ -49,5 +52,14 @@ export const Btn = styled.button`
     left: 50%;
     transform: translate(-50%, -50%);
     fill: ${(props) => props.theme.colorBtnAdd};
+  }
+  &:hover,
+  &:focus {
+    transition: ${(props) => props.theme.transitionHover};
+    background-color: ${(props) => props.theme.colorBtnAddBkgHover};
+    border: ${(props) => props.theme.borderBtnAdd};
+    svg {
+      fill: ${(props) => props.theme.colorBtnSvgHover};
+    }
   }
 `;

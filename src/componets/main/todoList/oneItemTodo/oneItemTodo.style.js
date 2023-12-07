@@ -62,6 +62,7 @@ export const Span = styled.span`
   top: 50%;
   left: 20px;
   transform: translate(-50%, -50%);
+  cursor: pointer;
   & svg {
     position: absolute;
     top: 30%;
@@ -90,6 +91,8 @@ export const Btn = styled.button`
   border-radius: 50%;
   border: transparent;
   background-color: ${(props) => props.theme.colorBkgBtnItemTodo};
+  transition: ${(props) => props.theme.transitionHover};
+  cursor: pointer;
   & svg {
     width: 16px;
     height: 16px;
@@ -98,5 +101,13 @@ export const Btn = styled.button`
     left: 50%;
     transform: translate(-50%, -50%);
     fill: ${(props) => props.theme.colorBtnAdd};
+  }
+  &:hover,
+  &:focus {
+    transition: ${(props) => props.theme.transitionHover};
+    background-color: ${(props) => props.theme.colorBkgBtnItemTodoHover};
+    svg {
+      transition: ${(props) => props.theme.transitionHover};
+    }
   }
 `;

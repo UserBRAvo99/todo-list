@@ -30,6 +30,14 @@ export const Btn = styled.button`
   color: ${(props) => props.theme.textColorWhite};
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
   padding: 10px;
+  transition: ${(props) => props.theme.transitionHover};
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    transition: ${(props) => props.theme.transitionHover};
+    background-color: ${(props) => props.theme.colorBtnFilterBkgHover};
+    color: ${(props) => props.theme.textColorBlack};
+  }
 `;
 
 export const Span = styled.span`

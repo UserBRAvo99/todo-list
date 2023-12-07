@@ -28,6 +28,9 @@ export const Btn = styled.button`
   background-color: transparent;
   border: transparent;
   position: relative;
+  transition: ${(props) => props.theme.transitionHover};
+  border-radius: ${(props) => props.theme.borderRadiusFormItem};
+  cursor: pointer;
   & svg {
     position: absolute;
     width: 22px;
@@ -36,5 +39,14 @@ export const Btn = styled.button`
     left: 50%;
     transform: translate(-50%, -50%);
     fill: ${(props) => props.theme.textColorWhite};
+  }
+  &:hover,
+  &:focus {
+    transition: ${(props) => props.theme.transitionHover};
+    background-color: ${(props) => props.theme.colorBtnFilterBkgHover};
+    svg {
+      transition: ${(props) => props.theme.transitionHover};
+      fill: ${(props) => props.theme.colorBtnSvgFilterHover};
+    }
   }
 `;
