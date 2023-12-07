@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { IoSettingsSharp } from "react-icons/io5";
 import styled, { css } from "styled-components";
+import SettingTodo from "../settingTodo/SettingTodo";
 
 const SettingsForTodo = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +47,9 @@ const SettingsForTodo = () => {
             <IoSettingsSharp />
           </Btn>
         </WrapperBtn>
-        <Box></Box>
+        <Box>
+          <SettingTodo />
+        </Box>
       </Wrapper>
     </>
   );

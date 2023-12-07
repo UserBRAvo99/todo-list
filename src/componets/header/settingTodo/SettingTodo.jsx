@@ -1,6 +1,8 @@
+import styled from "styled-components";
+
 const SettingTodo = () => {
   return (
-    <div>
+    <Wrapper>
       <form>
         <div>
           <fieldset>
@@ -20,8 +22,12 @@ const SettingTodo = () => {
         </div>
         <button>Submit</button>
       </form>
-    </div>
+    </Wrapper>
   );
 };
 
 export default SettingTodo;
+
+const Wrapper = styled.div`
+  display: flex;
+`;
