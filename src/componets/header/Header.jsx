@@ -1,6 +1,7 @@
 import { RiTodoLine } from "react-icons/ri";
 
 import { HeaderElement, Title, Wrapper, WrapperLogo } from "./header.style";
+import SettingsForTodo from "./settingsForTodo/SettingsForTodo";
 
 const Header = () => {
   return (
@@ -11,6 +12,7 @@ const Header = () => {
           <Title>Todo</Title>
         </WrapperLogo>
       </HeaderElement>
+      <SettingsForTodo />
     </Wrapper>
   );
 };

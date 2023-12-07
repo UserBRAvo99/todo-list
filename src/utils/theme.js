@@ -4,6 +4,8 @@ export const forest = {
   textColorBlack: "rgb(34,34,34)",
   // global transition for hover
   transitionHover: "all 500ms ease 0s",
+  // global border radius
+  borderRadiusFormItem: "10px",
 
   // component header todo
   colorHeader: "rgb(22, 113, 92)",
@@ -11,7 +13,6 @@ export const forest = {
   colorSvgHeader: "rgb(255, 255, 255)",
 
   // component create todo
-  borderRadiusFormItem: "10px",
   colorBtnAddBkg: "rgb(148, 67, 85)",
   colorBtnAdd: "rgb(255,255,255)",
   // create todo hover + focus btn
@@ -39,4 +40,10 @@ export const forest = {
   // component todo item
   colorBkgFooter: "rgb(22, 113, 92)",
   shadowFooter: "0px -8px 5px 0px rgba(0, 0, 0, 0.65)",
+
+  // component settings window
+  borderForSettings: "16px solid rgb(148, 67, 85)",
+  colorSvgSettingsOpen: "rgb(255, 255, 255)",
+  basicColorForSettingWindow: "rgb(148, 67, 85)",
+  basicColorForSettingWindowHover: "rgb(22, 113, 92)",
 };

@@ -13,6 +13,7 @@ export const HeaderElement = styled.header`
   padding: 20px 0;
   border-radius: 0 0 14px 14px;
   box-shadow: ${(props) => props.theme.shadowHeader};
+  position: relative;
 `;
 
 export const WrapperLogo = styled.div`
