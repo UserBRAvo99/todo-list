@@ -4,6 +4,7 @@ const initialState = {
   setting: {
     theme: {},
     language: "",
+    sortTodoList: "row",
   },
 };
 
@@ -14,7 +15,12 @@ const settingSlice = createSlice({
     // changeTheme: (state, actions) => {
     //   state.theme = classic;
     // },
+    changeSortListTodo: (state, actions) => {
+      state.setting.sortTodoList = actions.payload;
+    },
   },
 });
 
 export const settingSliceReducer = settingSlice.reducer;
+
+export const { changeSortListTodo } = settingSlice.actions;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import SortTodo from "../sortTodo/SortTodo";
 
-const FilterTodo = ({ filterTodo }) => {
+const FilterTodo = ({ filterTodo, changeTodo }) => {
   return (
     <Wrapper>
       <List>
@@ -25,6 +26,9 @@ const FilterTodo = ({ filterTodo }) => {
             Incomplete
           </Btn>
         </Item>
+        <li>
+          <SortTodo changeTodo={changeTodo} />
+        </li>
       </List>
     </Wrapper>
   );

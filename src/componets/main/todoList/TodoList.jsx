@@ -5,11 +5,13 @@ import styled from "styled-components";
 import CreateTodo from "./createTodo/CreateTodo";
 import FilterTodo from "./filterTodo/FilterTodo";
 import { IoCheckmarkSharp, IoClose } from "react-icons/io5";
+import { changeSortListTodo } from "../../../redux/settings";
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
 
   const { todos } = useSelector((state) => state.todoListSlice);
+  const { setting } = useSelector((state) => state.settingSlice);
 
   const dispatch = useDispatch();
 
@@ -38,16 +40,20 @@ const TodoList = () => {
     dispatch(changeTodo(id, check));
   };
 
+  const changeListFlex = (e) => {
+    dispatch(changeSortListTodo(e.currentTarget.name));
+  };
+
   return (
     <>
       <WrapperCreateAndFilter>
         <CreateTodo />
-        <FilterTodo filterTodo={handleFilterTodo} />
+        <FilterTodo filterTodo={handleFilterTodo} changeTodo={changeListFlex} />
       </WrapperCreateAndFilter>
-      <List>
+      <List $sort={setting.sortTodoList}>
         {todoList.map((todo) => {
           return (
-            <Item key={todo.id}>
+            <Item key={todo.id} $sort={setting.sortTodoList}>
               <label>
                 <Input
                   onChange={() => changeCheckBox(todo)}
@@ -90,13 +96,18 @@ const List = styled.ul`
   justify-content: center;
   gap: 20px;
   padding: 15px 0 60px 0;
+  @media screen and (min-width: 767px) {
+    flex-direction: ${({ $sort }) => $sort};
+    flex-wrap: wrap;
+    justify-content: start;
+  }
 `;
 
 const Item = styled.li`
   display: flex;
   width: 100%;
   gap: 15px;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
   background-color: ${(props) => props.theme.colorBkgItemTodo};
   border: solid 1px ${(props) => props.theme.colorBorderItemTodo};
@@ -110,8 +121,22 @@ const Item = styled.li`
     margin: 0 auto;
   }
   @media screen and (min-width: 767px) {
-    width: 100%;
-    margin: 0 auto;
+    width: ${({ $sort }) => {
+      if ($sort === "row") {
+        return "calc(50% - 10px)";
+      }
+      if ($sort === "column") {
+        return "500px";
+      }
+    }};
+    margin: ${({ $sort }) => {
+      if ($sort === "row") {
+        return "0";
+      }
+      if ($sort === "column") {
+        return "0 auto";
+      }
+    }};
   }
 `;
 
