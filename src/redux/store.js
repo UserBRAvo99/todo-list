@@ -15,17 +15,27 @@ import {
 import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
-  key: "root",
+  key: "todo",
+  version: 1,
+  storage,
+};
+const persistConfigSetting = {
+  key: "setting",
   version: 1,
   storage,
 };
 
 const persistedReducer = persistReducer(persistConfig, todoListReducer);
 
+const persistedReducerSetting = persistReducer(
+  persistConfigSetting,
+  settingSliceReducer
+);
+
 export const store = configureStore({
   reducer: {
     todoListSlice: persistedReducer,
-    settingSlice: settingSliceReducer,
+    settingSlice: persistedReducerSetting,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
