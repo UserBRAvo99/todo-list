@@ -83,8 +83,8 @@ const Wrapper = styled.div`
   position: absolute;
   display: flex;
   width: calc(100% - 36px);
-  height: 200px;
-  top: -200px;
+  height: 300px;
+  top: -300px;
   left: 18px;
   border: ${(props) => props.theme.borderForSettings};
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
