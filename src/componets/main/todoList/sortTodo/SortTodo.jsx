@@ -1,42 +1,27 @@
-import styled from "styled-components";
 import { FaThLarge, FaThList } from "react-icons/fa";
+
+import { Btn, Item, List, Span, Wrapper } from "./sortTodo.style";
 
 const SortTodo = ({ changeTodo }) => {
   return (
     <Wrapper>
       <List>
-        <li>
-          <span>|</span>
-        </li>
-        <li>
+        <Item>
+          <Span>|</Span>
+        </Item>
+        <Item>
           <Btn name="column" onClick={changeTodo}>
             <FaThList />
           </Btn>
-        </li>
-        <li>
+        </Item>
+        <Item>
           <Btn name="row" onClick={changeTodo}>
             <FaThLarge />
           </Btn>
-        </li>
+        </Item>
       </List>
     </Wrapper>
   );
 };
 
 export default SortTodo;
-
-const Wrapper = styled.div`
-  display: none;
-  @media screen and (min-width: 767px) {
-    display: flex;
-  }
-`;
-
-const List = styled.ul`
-  display: flex;
-  gap: 10px;
-`;
-
-const Btn = styled.button`
-  padding: 5px;
-`;

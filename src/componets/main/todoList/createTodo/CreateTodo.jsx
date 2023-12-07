@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../../../redux/todoSlice";
 import { FaPlus } from "react-icons/fa6";
-import styled from "styled-components";
+
+import { Btn, Form, Wrapper, WrapperInput, Input } from "./createTodo.style";
 
 const CreateTodo = () => {
   const [value, setValue] = useState("");
@@ -23,7 +24,7 @@ const CreateTodo = () => {
       <Form onSubmit={handleSubmit}>
         <WrapperInput>
           <Input
-            placeholder="Write new"
+            placeholder="..."
             value={value}
             type="text"
             onChange={(e) => {
@@ -40,55 +41,3 @@ const CreateTodo = () => {
 };
 
 export default CreateTodo;
-
-const Wrapper = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 0;
-  @media screen and (min-width: 530px) {
-    width: 500px;
-    margin: 0 auto;
-  }
-`;
-
-const Form = styled.form`
-  width: 100%;
-  padding: 10px;
-  border-radius: ${(props) => props.theme.borderRadiusFormItem};
-  background-color: ${(props) => props.theme.colorHeader};
-  box-shadow: ${(props) => props.theme.shadowHeader};
-`;
-
-const WrapperInput = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-`;
-
-const Input = styled.input`
-  width: 80%;
-  padding: 5px;
-  border-radius: 5px;
-  border: transparent;
-`;
-
-const Btn = styled.button`
-  position: relative;
-  align-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: transparent;
-  background-color: ${(props) => props.theme.colorBtnAddBkg};
-  & svg {
-    width: 22px;
-    height: 22px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    fill: ${(props) => props.theme.colorBtnAdd};
-  }
-`;

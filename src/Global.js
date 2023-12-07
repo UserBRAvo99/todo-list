@@ -18,16 +18,6 @@ p, button {
   list-style: none;
 }
 
-.container {
-  padding: 0 18px;
-  @media screen and (min-width: 767px) {
-    padding: 0 30px;
-  }
-  @media screen and (min-width: 1023px) {
-    padding: 0 60px;
-  }
-}
-
 body {
 font-family: ${font.fontFamily};
 font-size: ${font.fontSize};
@@ -39,6 +29,22 @@ letter-spacing: ${font.letterSpacing};
 @media screen and (min-width: 1024px) {
     width: 1024px;
     margin: 0 auto;
+  }
+}
+
+.container {
+  padding: 0 18px;
+  @media screen and (min-width: 767px) {
+    padding: 0 30px;
+  }
+  @media screen and (min-width: 1023px) {
+    padding: 0 60px;
+  }
+}
+
+.hidden {
+  @media screen and (max-width: 767px) {
+    display: none;
   }
 }
 `;
