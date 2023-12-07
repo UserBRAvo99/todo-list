@@ -138,6 +138,16 @@ const Item = styled.li`
       }
     }};
   }
+  @media screen and (min-width: 767px) {
+    width: ${({ $sort }) => {
+      if ($sort === "row") {
+        return "calc(50% - 10px)";
+      }
+      if ($sort === "column") {
+        return "700px";
+      }
+    }};
+  }
 `;
 
 const Input = styled.input`

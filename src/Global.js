@@ -26,9 +26,6 @@ p, button {
   @media screen and (min-width: 1023px) {
     padding: 0 60px;
   }
-  @media screen and (min-width: 1439px) {
-    padding: 0 120px;
-  }
 }
 
 body {
@@ -38,6 +35,11 @@ font-style: ${font.fontStyle};
 font-weight: ${font.fontWeight};
 line-height: ${font.lineHeight};
 letter-spacing: ${font.letterSpacing};
+
+@media screen and (min-width: 1024px) {
+    width: 1024px;
+    margin: 0 auto;
+  }
 }
 `;
 
