@@ -88,7 +88,7 @@ const Wrapper = styled.div`
   left: 18px;
   border: ${(props) => props.theme.borderForSettings};
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
-  background-color: white;
+  background-color: ${(props) => props.theme.basicColorForSettingWindow};
   z-index: 3;
 
   transform: translateY(0);

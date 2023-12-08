@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const SettingTodo = () => {
   return (
@@ -8,16 +8,16 @@ const SettingTodo = () => {
           <h2>Language</h2>
           <Fieldset>
             <Label>
-              <Input name="1" type="radio" value="theme1" />
-              <BoxFlag></BoxFlag>
+              <Input name="england" type="radio" value="theme1" />
+              <BoxFlag $flag="england"></BoxFlag>
             </Label>
             <Label htmlFor="">
-              <input name="1" type="radio" value="theme2" />
-              <BoxFlag></BoxFlag>
+              <input name="ukraine" type="radio" value="theme2" />
+              <BoxFlag $flag="ukraine"></BoxFlag>
             </Label>
             <Label htmlFor="">
-              <input name="1" type="radio" value="theme3" />
-              <BoxFlag></BoxFlag>
+              <input name="sweden" type="radio" value="theme3" />
+              <BoxFlag $flag="sweden"></BoxFlag>
             </Label>
           </Fieldset>
         </div>
@@ -40,6 +40,8 @@ export default SettingTodo;
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
+  background-color: pink;
+  border-radius: ${(props) => props.theme.borderRadiusFormItem};
 `;
 
 const Form = styled.form`
@@ -53,10 +55,12 @@ const Fieldset = styled.fieldset`
   justify-content: space-around;
   margin: 0;
   padding: 0;
+  border: transparent;
 `;
 
 const Label = styled.label`
   position: relative;
+  border: transparent;
 `;
 
 const Input = styled.input`
@@ -71,6 +75,25 @@ const BoxFlag = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: pink;
   border-radius: 50%;
+  ${({ $flag }) => {
+    if ($flag === "england") {
+      return css`
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/320px-Flag_of_the_United_Kingdom_%281-2%29.svg.png");
+      `;
+    }
+    if ($flag === "ukraine") {
+      return css`
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/320px-Flag_of_Ukraine.svg.png");
+      `;
+    }
+    if ($flag === "sweden") {
+      return css`
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/320px-Flag_of_Sweden.svg.png");
+      `;
+    }
+  }}
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
 `;
