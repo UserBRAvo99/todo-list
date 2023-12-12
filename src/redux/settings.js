@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   setting: {
     theme: {},
-    language: "",
+    language: "england",
     sortTodoList: "row",
   },
 };
@@ -12,9 +12,9 @@ const settingSlice = createSlice({
   name: "settingTodo",
   initialState,
   reducers: {
-    // changeTheme: (state, actions) => {
-    //   state.theme = classic;
-    // },
+    changeLanguage: (state, actions) => {
+      state.language = actions.payload;
+    },
     changeSortListTodo: (state, actions) => {
       state.setting.sortTodoList = actions.payload;
     },
@@ -23,4 +23,4 @@ const settingSlice = createSlice({
 
 export const settingSliceReducer = settingSlice.reducer;
 
-export const { changeSortListTodo } = settingSlice.actions;
+export const { changeSortListTodo, changeLanguage } = settingSlice.actions;

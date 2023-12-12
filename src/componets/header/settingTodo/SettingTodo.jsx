@@ -1,27 +1,43 @@
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled, { css } from "styled-components";
+import { changeLanguage } from "../../../redux/settings";
 
-const SettingTodo = () => {
+const SettingTodo = ({ closeModal }) => {
+  const { setting } = useSelector((state) => state.settingSlice);
+
+  const [language, setLanguage] = useState(setting.language);
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(changeLanguage(language));
+  };
+
+  const handleChangeLanguage = (e) => {
+    setLanguage(e.target.value);
+  };
+
   return (
     <Wrapper>
-      <Form>
-        <div>
-          <h2>Language</h2>
-          <Fieldset>
-            <Label>
-              <Input name="england" type="radio" value="theme1" />
-              <BoxFlag $flag="england"></BoxFlag>
-            </Label>
-            <Label htmlFor="">
-              <input name="ukraine" type="radio" value="theme2" />
-              <BoxFlag $flag="ukraine"></BoxFlag>
-            </Label>
-            <Label htmlFor="">
-              <input name="sweden" type="radio" value="theme3" />
-              <BoxFlag $flag="sweden"></BoxFlag>
-            </Label>
-          </Fieldset>
-        </div>
-        {/*  */}
+      <Title>Language</Title>
+      <Form onSubmit={handleSubmit}>
+        <WrapperCountry onChange={handleChangeLanguage}>
+          <Label name="england">
+            <Input name="language" type="radio" value="england" />
+            <BoxFlag $flag="england"></BoxFlag>
+          </Label>
+          <Label name="ukraine">
+            <Input name="language" type="radio" value="ukraine" />
+            <BoxFlag $flag="ukraine"></BoxFlag>
+          </Label>
+          <Label name="sweden">
+            <Input name="language" type="radio" value="sweden" />
+            <BoxFlag $flag="sweden"></BoxFlag>
+          </Label>
+        </WrapperCountry>
+
         {/* <div>
           <fieldset>
             <input name="2" type="radio" value="language1" />
@@ -30,7 +46,7 @@ const SettingTodo = () => {
             <input name="2" type="radio" value="language4" />
           </fieldset>
         </div> */}
-        <button>Submit</button>
+        <Btn onClick={closeModal}>Submit</Btn>
       </Form>
     </Wrapper>
   );
@@ -40,23 +56,30 @@ export default SettingTodo;
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
-  background-color: pink;
+  background-color: white;
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
 `;
 
+const Title = styled.h2`
+  align-items: center;
+  text-align: center;
+  padding: 30px 0 15px 0;
+`;
+
 const Form = styled.form`
+  display: flex;
+  flex-direction: column;
   width: 100%;
 `;
 
-const Fieldset = styled.fieldset`
+const WrapperCountry = styled.div`
   display: flex;
   width: 100%;
   height: auto;
   justify-content: space-around;
-  margin: 0;
-  padding: 0;
-  border: transparent;
+  padding: 15px 0;
 `;
 
 const Label = styled.label`
@@ -96,5 +119,11 @@ const BoxFlag = styled.div`
   }}
   background-size: cover;
   background-position: center;
+  cursor: pointer;
+`;
+
+const Btn = styled.button`
+  margin: 0 auto;
+
   cursor: pointer;
 `;

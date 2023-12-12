@@ -48,7 +48,7 @@ const SettingsForTodo = () => {
           </Btn>
         </WrapperBtn>
         <Box>
-          <SettingTodo />
+          <SettingTodo closeModal={handleClick} />
         </Box>
       </Wrapper>
     </>
