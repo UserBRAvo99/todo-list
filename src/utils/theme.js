@@ -46,4 +46,6 @@ export const forest = {
   colorSvgSettingsOpen: "rgb(255, 255, 255)",
   basicColorForSettingWindow: "rgb(148, 67, 85)",
   basicColorForSettingWindowHover: "rgb(22, 113, 92)",
+  // settings window hover
+  shadowForSettingsLanguage: "0px 0px 10px 5px rgba(22, 113, 92, 0.75);",
 };

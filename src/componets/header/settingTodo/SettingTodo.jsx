@@ -6,7 +6,7 @@ import { changeLanguage } from "../../../redux/settings";
 const SettingTodo = ({ closeModal }) => {
   const { setting } = useSelector((state) => state.settingSlice);
 
-  const [language, setLanguage] = useState(setting.language);
+  const [language, setLanguage] = useState("england");
 
   const dispatch = useDispatch();
 
@@ -26,15 +26,24 @@ const SettingTodo = ({ closeModal }) => {
         <WrapperCountry onChange={handleChangeLanguage}>
           <Label name="england">
             <Input name="language" type="radio" value="england" />
-            <BoxFlag $flag="england"></BoxFlag>
+            <BoxFlag
+              $flag="england"
+              className={language === "england" && "activeLanguage"}
+            ></BoxFlag>
           </Label>
           <Label name="ukraine">
             <Input name="language" type="radio" value="ukraine" />
-            <BoxFlag $flag="ukraine"></BoxFlag>
+            <BoxFlag
+              $flag="ukraine"
+              className={language === "ukraine" && "activeLanguage"}
+            ></BoxFlag>
           </Label>
           <Label name="sweden">
             <Input name="language" type="radio" value="sweden" />
-            <BoxFlag $flag="sweden"></BoxFlag>
+            <BoxFlag
+              $flag="sweden"
+              className={language === "sweden" && "activeLanguage"}
+            ></BoxFlag>
           </Label>
         </WrapperCountry>
 
@@ -120,10 +129,15 @@ const BoxFlag = styled.div`
   background-size: cover;
   background-position: center;
   cursor: pointer;
+  transition: ${(props) => props.theme.transitionHover};
+  &:hover,
+  &:focus {
+    transition: ${(props) => props.theme.transitionHover};
+    box-shadow: ${(props) => props.theme.shadowForSettingsLanguage};
+  }
 `;
 
 const Btn = styled.button`
   margin: 0 auto;
-
   cursor: pointer;
 `;

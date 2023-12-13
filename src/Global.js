@@ -47,6 +47,17 @@ letter-spacing: ${font.letterSpacing};
     display: none;
   }
 }
+
+.activeFilter {
+  background-color: ${(props) => props.theme.colorBtnFilterBkgHover};
+    svg {
+      fill: ${(props) => props.theme.colorBtnSvgFilterHover};
+    }
+}
+
+.activeLanguage {
+  box-shadow: ${(props) => props.theme.shadowForSettingsLanguage};
+}
 `;
 
 export default Global;
