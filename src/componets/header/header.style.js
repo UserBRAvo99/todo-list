@@ -3,6 +3,7 @@ import { font } from "../../utils/font";
 
 export const Wrapper = styled.header`
   padding-bottom: 15px;
+  position: relative;
 `;
 
 export const HeaderElement = styled.header`

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled, { css } from "styled-components";
 import { changeLanguage } from "../../../redux/settings";
 
-const SettingTodo = ({ closeModal }) => {
-  const { setting } = useSelector((state) => state.settingSlice);
+const ChangeSettingForTodo = ({ closeModal }) => {
+  // const { setting } = useSelector((state) => state.settingSlice);
 
   const [language, setLanguage] = useState("england");
 
@@ -61,7 +61,7 @@ const SettingTodo = ({ closeModal }) => {
   );
 };
 
-export default SettingTodo;
+export default ChangeSettingForTodo;
 
 const Wrapper = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { IoSettingsSharp } from "react-icons/io5";
 import styled, { css } from "styled-components";
-import SettingTodo from "../settingTodo/SettingTodo";
+import ChangeSettingForTodo from "../changeSettingForTodo/ChangeSettingForTodo";
 
 const SettingsForTodo = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +48,7 @@ const SettingsForTodo = () => {
           </Btn>
         </WrapperBtn>
         <Box>
-          <SettingTodo closeModal={handleClick} />
+          <ChangeSettingForTodo closeModal={handleClick} />
         </Box>
       </Wrapper>
     </>
@@ -58,7 +58,7 @@ const SettingsForTodo = () => {
 export default SettingsForTodo;
 
 const Overlay = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100vw;
