@@ -2,16 +2,25 @@ import "normalize.css";
 
 import Header from "./componets/header/Header";
 import Main from "./componets/main/Main";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Footer from "./componets/footer/Footer";
+// import { useState } from "react";
+
+import Global from "./Global";
+import { forest } from "./utils/theme";
 
 function App() {
+  // const [globalTheme, setGlobalTheme] = useState(forest);
+
   return (
-    <Wrapper>
-      <Header />
-      <Main />
-      <Footer />
-    </Wrapper>
+    <ThemeProvider theme={forest}>
+      <Wrapper>
+        <Header />
+        <Main />
+        <Footer />
+      </Wrapper>
+      <Global />
+    </ThemeProvider>
   );
 }
 
