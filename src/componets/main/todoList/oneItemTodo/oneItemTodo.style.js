@@ -89,7 +89,7 @@ export const Btn = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: transparent;
+  border: ${(props) => props.theme.colorBorderItemTodoHover};
   background-color: ${(props) => props.theme.colorBkgBtnItemTodo};
   transition: ${(props) => props.theme.transitionHover};
   cursor: pointer;
@@ -100,7 +100,7 @@ export const Btn = styled.button`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    fill: ${(props) => props.theme.colorBtnAdd};
+    fill: ${(props) => props.theme.colorBkgBtnSvgItemTodo};
   }
   &:hover,
   &:focus {
@@ -108,6 +108,7 @@ export const Btn = styled.button`
     background-color: ${(props) => props.theme.colorBkgBtnItemTodoHover};
     svg {
       transition: ${(props) => props.theme.transitionHover};
+      fill: ${(props) => props.theme.colorBkgBtnSvgItemTodoHover};
     }
   }
 `;

@@ -18,6 +18,7 @@ export const Form = styled.form`
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
   background-color: ${(props) => props.theme.colorHeader};
   box-shadow: ${(props) => props.theme.shadowHeader};
+  border: ${(props) => props.theme.borderHeader};
 `;
 
 export const WrapperInput = styled.div`
@@ -30,7 +31,7 @@ export const Input = styled.input`
   width: 80%;
   padding: 5px;
   border-radius: 5px;
-  border: transparent;
+  border: ${(props) => props.theme.borderHeader};
 `;
 
 export const Btn = styled.button`

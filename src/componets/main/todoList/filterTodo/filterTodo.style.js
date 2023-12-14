@@ -27,7 +27,7 @@ export const Item = styled.li``;
 export const Btn = styled.button`
   border: transparent;
   background-color: transparent;
-  color: ${(props) => props.theme.textColorWhite};
+  color: ${(props) => props.theme.colorListTitle};
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
   padding: 10px;
   transition: ${(props) => props.theme.transitionHover};
@@ -36,11 +36,10 @@ export const Btn = styled.button`
   &:focus {
     transition: ${(props) => props.theme.transitionHover};
     background-color: ${(props) => props.theme.colorBtnFilterBkgHover};
-    color: ${(props) => props.theme.textColorBlack};
+    color: ${(props) => props.theme.colorListTitleHover};
   }
 `;
 
 export const Span = styled.span`
-  color: inherit;
-  color: ${(props) => props.theme.textColorWhite};
+  color: ${(props) => props.theme.colorListTitle};
 `;

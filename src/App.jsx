@@ -27,6 +27,6 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
-  background-image: url("https://img.freepik.com/premium-vector/vector-cartoon-flat-illustration-seamless-pattern-with-christmas-doodle-icons-new-year-decorations-background_364586-350.jpg?w=740");
+  background-image: ${(props) => props.theme.imgBkgGlobal};
   background-size: contain;
 `;
