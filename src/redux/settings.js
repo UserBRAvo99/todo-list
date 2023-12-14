@@ -13,13 +13,13 @@ const settingSlice = createSlice({
   initialState,
   reducers: {
     changeLanguage: (state, actions) => {
-      state.language = actions.payload;
+      state.setting.language = actions.payload;
     },
     changeSortListTodo: (state, actions) => {
       state.setting.sortTodoList = actions.payload;
     },
     changeTheme: (state, actions) => {
-      state.setting.themet = actions.payload;
+      state.setting.theme = actions.payload;
     },
   },
 });

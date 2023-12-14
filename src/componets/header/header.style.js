@@ -15,6 +15,7 @@ export const HeaderElement = styled.header`
   border-radius: 0 0 14px 14px;
   box-shadow: ${(props) => props.theme.shadowHeader};
   position: relative;
+  border: ${(props) => props.theme.borderHeader};
 `;
 
 export const WrapperLogo = styled.div`
@@ -24,12 +25,12 @@ export const WrapperLogo = styled.div`
     width: 30px;
     height: 30px;
     margin-right: 10px;
-    fill: ${(props) => props.theme.colorSvgHeader};
+    fill: ${(props) => props.theme.colorHeaderSvg};
   }
 `;
 
 export const Title = styled.h1`
-  color: ${(props) => props.theme.textColorWhite};
+  color: ${(props) => props.theme.colorHeaderTitle};
   font-family: ${font.fontFamily};
   font-size: 36px;
   font-weight: 700;

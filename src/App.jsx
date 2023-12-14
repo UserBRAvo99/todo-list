@@ -4,16 +4,16 @@ import Header from "./componets/header/Header";
 import Main from "./componets/main/Main";
 import styled, { ThemeProvider } from "styled-components";
 import Footer from "./componets/footer/Footer";
-// import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import Global from "./Global";
-import { forest } from "./utils/theme";
+import { classic, forest } from "./utils/theme";
 
 function App() {
-  // const [globalTheme, setGlobalTheme] = useState(forest);
+  const { setting } = useSelector((state) => state.settingSlice);
 
   return (
-    <ThemeProvider theme={forest}>
+    <ThemeProvider theme={setting.theme === "classic" ? classic : forest}>
       <Wrapper>
         <Header />
         <Main />

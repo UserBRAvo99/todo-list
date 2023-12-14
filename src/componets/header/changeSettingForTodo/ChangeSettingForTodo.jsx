@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled, { css } from "styled-components";
 import { changeLanguage, changeTheme } from "../../../redux/settings";
 
 const ChangeSettingForTodo = ({ closeModal }) => {
-  // const { setting } = useSelector((state) => state.settingSlice);
+  const { setting } = useSelector((state) => state.settingSlice);
 
   const [language, setLanguage] = useState("england");
 
@@ -35,21 +35,21 @@ const ChangeSettingForTodo = ({ closeModal }) => {
             <Input name="language" type="radio" value="england" />
             <BoxFlag
               $flag="england"
-              className={language === "england" && "activeLanguage"}
+              className={setting.language === "england" && "activeLanguage"}
             ></BoxFlag>
           </Label>
           <Label name="ukraine">
             <Input name="language" type="radio" value="ukraine" />
             <BoxFlag
               $flag="ukraine"
-              className={language === "ukraine" && "activeLanguage"}
+              className={setting.language === "ukraine" && "activeLanguage"}
             ></BoxFlag>
           </Label>
           <Label name="sweden">
             <Input name="language" type="radio" value="sweden" />
             <BoxFlag
               $flag="sweden"
-              className={language === "sweden" && "activeLanguage"}
+              className={setting.language === "sweden" && "activeLanguage"}
             ></BoxFlag>
           </Label>
         </WrapperChange>
@@ -60,21 +60,21 @@ const ChangeSettingForTodo = ({ closeModal }) => {
             <Input name="theme" type="radio" value="forest" />
             <BoxTheme
               $theme="forest"
-              className={themeTodo === "forest" && "activeLanguage"}
+              className={setting.theme === "forest" && "activeLanguage"}
             ></BoxTheme>
           </Label>
           <Label name="classic">
             <Input name="theme" type="radio" value="classic" />
             <BoxTheme
               $theme="classic"
-              className={themeTodo === "classic" && "activeLanguage"}
+              className={setting.theme === "classic" && "activeLanguage"}
             ></BoxTheme>
           </Label>
           <Label name="dark">
             <Input name="theme" type="radio" value="dark" />
             <BoxTheme
               $theme="dark"
-              className={themeTodo === "dark" && "activeLanguage"}
+              className={setting.theme === "dark" && "activeLanguage"}
             ></BoxTheme>
           </Label>
         </WrapperChange>
