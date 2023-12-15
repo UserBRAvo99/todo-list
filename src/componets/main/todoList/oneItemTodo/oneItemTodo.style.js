@@ -81,6 +81,7 @@ export const WrapperText = styled.div`
 `;
 
 export const Text = styled.p`
+  color: ${(props) => props.theme.colorTextItemTodo};
   text-decoration: ${({ $done }) => ($done ? "line-through" : "none")};
 `;
 export const Btn = styled.button`

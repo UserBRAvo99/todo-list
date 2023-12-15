@@ -9,12 +9,21 @@ import { useSelector } from "react-redux";
 import Global from "./Global";
 import { classic } from "./utils/theme/themeClassic";
 import { forest } from "./utils/theme/themeForest";
+import { dark } from "./utils/theme/themeDark";
 
 function App() {
   const { setting } = useSelector((state) => state.settingSlice);
 
   return (
-    <ThemeProvider theme={setting.theme === "classic" ? classic : forest}>
+    <ThemeProvider
+      theme={
+        setting.theme === "classic"
+          ? classic
+          : setting.theme === "dark"
+          ? dark
+          : forest
+      }
+    >
       <Wrapper>
         <Header />
         <Main />

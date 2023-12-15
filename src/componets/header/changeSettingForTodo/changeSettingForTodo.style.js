@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   height: auto;
-  background-color: white;
+  background-color: ${(props) => props.theme.colorBkgSetting};
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
   padding: 20px;
 `;

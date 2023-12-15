@@ -32,6 +32,7 @@ export const Input = styled.input`
   padding: 5px;
   border-radius: 5px;
   border: ${(props) => props.theme.borderHeader};
+  background-color: ${(props) => props.theme.colorInputBkg};
 `;
 
 export const Btn = styled.button`

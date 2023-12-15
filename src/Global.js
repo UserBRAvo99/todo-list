@@ -26,6 +26,8 @@ font-weight: ${font.fontWeight};
 line-height: ${font.lineHeight};
 letter-spacing: ${font.letterSpacing};
 
+background-color: ${(props) => props.theme.colorBody};;
+
 @media screen and (min-width: 1024px) {
     width: 1024px;
     margin: 0 auto;

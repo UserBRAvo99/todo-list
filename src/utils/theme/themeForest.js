@@ -1,4 +1,6 @@
 export const forest = {
+  // body background color
+  colorBody: "none",
   // global color for text
   textColorWhite: "rgb(255,255,255)",
   textColorBlack: "rgb(34,34,34)",
@@ -20,6 +22,7 @@ export const forest = {
   // component create todo
   colorBtnAddBkg: "rgb(148, 67, 85)",
   colorBtnAdd: "rgb(255,255,255)",
+  colorInputBkg: "rgb(255,255,255)",
   // create todo hover + focus btn
   colorBtnAddBkgHover: "rgb(225,239,239)",
   colorBtnSvgHover: "rgb(22, 113, 92)",
@@ -37,6 +40,7 @@ export const forest = {
   colorBtnSvgSort: "rgb(255,255,255)",
 
   // component todo item
+  colorTextItemTodo: "rgb(34,34,34)",
   colorBkgItemTodo: "rgb(225,239,239)",
   colorBorderItemTodo: "rgb(22, 113, 92)",
   colorBkgBtnItemTodo: "rgb(148, 67, 85)",
@@ -55,6 +59,8 @@ export const forest = {
   borderForSettings: "16px solid rgb(148, 67, 85)",
   colorSvgSettingsOpen: "rgb(255, 255, 255)",
   basicColorForSettingWindow: "rgb(148, 67, 85)",
+
+  colorBkgSetting: "rgb(255,255,255)",
   basicColorForSettingWindowHover: "rgb(22, 113, 92)",
   colorModalTitle: "rgb(34,34,34)",
   colorBtnBkg: "rgb(148, 67, 85)",

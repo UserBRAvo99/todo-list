@@ -1,4 +1,6 @@
 export const classic = {
+  // body background color
+  colorBody: "none",
   // global color for text
   textColorWhite: "rgb(255,255,255)",
   textColorBlack: "rgb(34,34,34)",
@@ -19,6 +21,7 @@ export const classic = {
   // component create todo
   colorBtnAddBkg: "rgb(54,117,254)",
   colorBtnAdd: "rgb(255,255,255)",
+  colorInputBkg: "rgb(255,255,255)",
   // create todo hover + focus btn
   colorBtnAddBkgHover: "rgb(255,255,255)",
   colorBtnSvgHover: "rgb(54,117,254)",
@@ -36,6 +39,7 @@ export const classic = {
   colorBtnSvgSort: "rgb(55,118,255)",
 
   // component todo item
+  colorTextItemTodo: "rgb(34,34,34)",
   colorBkgItemTodo: "rgb(255,255,255)",
   colorBorderItemTodo: "transparent",
   colorBkgBtnItemTodo: "rgb(55,118,255)",
@@ -55,6 +59,8 @@ export const classic = {
   colorSvgSettingsOpen: "rgb(255, 255, 255)",
   basicColorForSettingWindow: "rgb(55,118,255)",
   basicColorForSettingWindowHover: "rgb(255, 255, 255)",
+
+  colorBkgSetting: "rgb(255,255,255)",
   colorModalTitle: "rgb(55,118,255)",
   colorBtnBkg: "rgb(55,118,255)",
   colorBtnTitle: "rgb(255,255,255)",
