@@ -7,7 +7,8 @@ import Footer from "./componets/footer/Footer";
 import { useSelector } from "react-redux";
 
 import Global from "./Global";
-import { classic, forest } from "./utils/theme";
+import { classic } from "./utils/theme/themeClassic";
+import { forest } from "./utils/theme/themeForest";
 
 function App() {
   const { setting } = useSelector((state) => state.settingSlice);

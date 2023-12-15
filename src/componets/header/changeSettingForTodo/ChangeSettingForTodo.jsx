@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import styled, { css } from "styled-components";
+import { useDispatch } from "react-redux";
 import { changeLanguage, changeTheme } from "../../../redux/settings";
-import { font } from "../../../utils/font";
+import ChangeTheme from "./changeTheme/ChangeTheme";
+import ChangeLanguage from "./changeLanguage/ChangeLanguage";
+
+import { Btn, Form, Title, Wrapper } from "./changeSettingForTodo.style";
 
 const ChangeSettingForTodo = ({ closeModal }) => {
-  const { setting } = useSelector((state) => state.settingSlice);
-
   const [language, setLanguage] = useState("england");
 
   const [themeTodo, setThemeTodo] = useState("forest");
@@ -31,54 +31,10 @@ const ChangeSettingForTodo = ({ closeModal }) => {
     <Wrapper>
       <Title>Language</Title>
       <Form onSubmit={handleSubmit}>
-        <WrapperChange onChange={handleChangeLanguage}>
-          <Label name="england">
-            <Input name="language" type="radio" value="england" />
-            <BoxFlag
-              $flag="england"
-              className={setting.language === "england" && "activeLanguage"}
-            ></BoxFlag>
-          </Label>
-          <Label name="ukraine">
-            <Input name="language" type="radio" value="ukraine" />
-            <BoxFlag
-              $flag="ukraine"
-              className={setting.language === "ukraine" && "activeLanguage"}
-            ></BoxFlag>
-          </Label>
-          <Label name="sweden">
-            <Input name="language" type="radio" value="sweden" />
-            <BoxFlag
-              $flag="sweden"
-              className={setting.language === "sweden" && "activeLanguage"}
-            ></BoxFlag>
-          </Label>
-        </WrapperChange>
+        <ChangeLanguage handleClick={handleChangeLanguage} />
 
         <Title>Theme</Title>
-        <WrapperChange onChange={handleChangeTheme}>
-          <Label name="forest">
-            <Input name="theme" type="radio" value="forest" />
-            <BoxTheme
-              $theme="forest"
-              className={setting.theme === "forest" && "activeLanguage"}
-            ></BoxTheme>
-          </Label>
-          <Label name="classic">
-            <Input name="theme" type="radio" value="classic" />
-            <BoxTheme
-              $theme="classic"
-              className={setting.theme === "classic" && "activeLanguage"}
-            ></BoxTheme>
-          </Label>
-          <Label name="dark">
-            <Input name="theme" type="radio" value="dark" />
-            <BoxTheme
-              $theme="dark"
-              className={setting.theme === "dark" && "activeLanguage"}
-            ></BoxTheme>
-          </Label>
-        </WrapperChange>
+        <ChangeTheme handleClick={handleChangeTheme} />
 
         <Btn onClick={closeModal}>Change</Btn>
       </Form>
@@ -87,144 +43,3 @@ const ChangeSettingForTodo = ({ closeModal }) => {
 };
 
 export default ChangeSettingForTodo;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  background-color: white;
-  border-radius: ${(props) => props.theme.borderRadiusFormItem};
-  padding: 20px;
-`;
-
-const Title = styled.h2`
-  font-size: 28px;
-  font-weight: 700;
-  color: ${(props) => props.theme.colorModalTitle};
-  font-family: ${font.fontFamily};
-  align-items: center;
-  text-align: center;
-  padding: 0 0 30px 0;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
-const WrapperChange = styled.div`
-  display: flex;
-  width: 100%;
-  height: auto;
-  justify-content: space-around;
-  padding: 0 0 40px 0;
-`;
-
-const Label = styled.label`
-  position: relative;
-  border: transparent;
-`;
-
-const Input = styled.input`
-  opacity: 0;
-`;
-
-const BoxFlag = styled.div`
-  display: flex;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  ${({ $flag }) => {
-    if ($flag === "england") {
-      return css`
-        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/320px-Flag_of_the_United_Kingdom_%281-2%29.svg.png");
-      `;
-    }
-    if ($flag === "ukraine") {
-      return css`
-        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/320px-Flag_of_Ukraine.svg.png");
-      `;
-    }
-    if ($flag === "sweden") {
-      return css`
-        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/320px-Flag_of_Sweden.svg.png");
-      `;
-    }
-  }}
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  transition: ${(props) => props.theme.transitionHover};
-  &:hover,
-  &:focus {
-    transition: ${(props) => props.theme.transitionHover};
-    box-shadow: ${(props) => props.theme.shadowForSettingsLanguage};
-  }
-`;
-
-const BoxTheme = styled.div`
-  display: flex;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  ${({ $theme }) => {
-    if ($theme === "forest") {
-      return css`
-        background: radial-gradient(
-          circle,
-          rgba(22, 113, 92, 1) 0%,
-          rgba(148, 67, 85, 1) 35%,
-          rgba(255, 255, 255, 1) 100%
-        );
-      `;
-    }
-    if ($theme === "classic") {
-      return css`
-        background: radial-gradient(
-          circle,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(11, 117, 190, 1) 100%
-        );
-      `;
-    }
-    if ($theme === "dark") {
-      return css`
-        background: radial-gradient(
-          circle,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(255, 255, 255, 1) 100%
-        );
-      `;
-    }
-  }}
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  transition: ${(props) => props.theme.transitionHover};
-  &:hover,
-  &:focus {
-    transition: ${(props) => props.theme.transitionHover};
-    box-shadow: ${(props) => props.theme.shadowForSettingsLanguage};
-  }
-`;
-
-const Btn = styled.button`
-  background-color: ${(props) => props.theme.colorBtnBkg};
-  color: ${(props) => props.theme.colorBtnTitle};
-  border: transparent;
-  padding: 10px 20px;
-  border-radius: ${(props) => props.theme.borderRadiusFormItem};
-  font-size: 18px;
-  margin: 0 auto;
-  cursor: pointer;
-`;
