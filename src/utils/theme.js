@@ -56,6 +56,7 @@ export const forest = {
   colorSvgSettingsOpen: "rgb(255, 255, 255)",
   basicColorForSettingWindow: "rgb(148, 67, 85)",
   basicColorForSettingWindowHover: "rgb(22, 113, 92)",
+  colorModalTitle: "rgb(34,34,34)",
   // settings window hover
   shadowForSettingsLanguage: "0px 0px 10px 5px rgba(22, 113, 92, 0.75);",
 };
@@ -117,6 +118,9 @@ export const classic = {
   colorSvgSettingsOpen: "rgb(255, 255, 255)",
   basicColorForSettingWindow: "rgb(55,118,255)",
   basicColorForSettingWindowHover: "rgb(255, 255, 255)",
+  colorModalTitle: "rgb(55,118,255)",
+  colorBtnBkg: "rgb(55,118,255)",
+  colorBtnTitle: "rgb(255,255,255)",
   // settings window hover
   shadowForSettingsLanguage: "0px 0px 10px 5px rgba(55,118,255, 0.75);",
 };

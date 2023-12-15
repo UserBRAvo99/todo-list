@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled, { css } from "styled-components";
 import { changeLanguage, changeTheme } from "../../../redux/settings";
+import { font } from "../../../utils/font";
 
 const ChangeSettingForTodo = ({ closeModal }) => {
   const { setting } = useSelector((state) => state.settingSlice);
@@ -79,7 +80,7 @@ const ChangeSettingForTodo = ({ closeModal }) => {
           </Label>
         </WrapperChange>
 
-        <Btn onClick={closeModal}>Submit</Btn>
+        <Btn onClick={closeModal}>Change</Btn>
       </Form>
     </Wrapper>
   );
@@ -94,12 +95,17 @@ const Wrapper = styled.div`
   height: auto;
   background-color: white;
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
+  padding: 20px;
 `;
 
 const Title = styled.h2`
+  font-size: 28px;
+  font-weight: 700;
+  color: ${(props) => props.theme.colorModalTitle};
+  font-family: ${font.fontFamily};
   align-items: center;
   text-align: center;
-  padding: 30px 0 15px 0;
+  padding: 0 0 30px 0;
 `;
 
 const Form = styled.form`
@@ -113,7 +119,7 @@ const WrapperChange = styled.div`
   width: 100%;
   height: auto;
   justify-content: space-around;
-  padding: 15px 0;
+  padding: 0 0 40px 0;
 `;
 
 const Label = styled.label`
@@ -213,6 +219,12 @@ const BoxTheme = styled.div`
 `;
 
 const Btn = styled.button`
+  background-color: ${(props) => props.theme.colorBtnBkg};
+  color: ${(props) => props.theme.colorBtnTitle};
+  border: transparent;
+  padding: 10px 20px;
+  border-radius: ${(props) => props.theme.borderRadiusFormItem};
+  font-size: 18px;
   margin: 0 auto;
   cursor: pointer;
 `;

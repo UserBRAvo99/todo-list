@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
   width: calc(100% - 36px);
   height: 400px;
   top: -400px;
-  left: 18px;
+  right: 10px;
   border: ${(props) => props.theme.borderForSettings};
   border-radius: ${(props) => props.theme.borderRadiusFormItem};
   background-color: ${(props) => props.theme.basicColorForSettingWindow};
@@ -44,7 +44,14 @@ export const Wrapper = styled.div`
       `;
     }
   }}
+  @media screen and (min-width: 526px) {
+    width: 490px;
+  }
+  @media screen and (min-width: 725px) {
+    right: 40px;
+  }
 `;
+
 export const Box = styled.div`
   display: flex;
   width: 100%;

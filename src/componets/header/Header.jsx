@@ -11,8 +11,8 @@ const Header = () => {
           <RiTodoLine />
           <Title>Todo</Title>
         </WrapperLogo>
+        <SettingsForTodo />
       </HeaderElement>
-      <SettingsForTodo />
     </Wrapper>
   );
 };
