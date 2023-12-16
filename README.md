@@ -1,6 +1,6 @@
 # Todo: Проект розроблений для зручності упорядкуванню повсякденних справ.
 
-[Посилання на проект](https://todo-list-pc5gnc4s2-userbravo99.vercel.app/)
+[Посилання на проект](https://todo-list-one-kappa-71.vercel.app/)
 
 # Запуск проекта Todo
 
