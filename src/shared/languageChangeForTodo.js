@@ -1,19 +1,4 @@
 export const languageChangeForTodo = (language) => {
-  if (language === "england") {
-    return {
-      titleTodo: "Todo",
-      filterTodo: {
-        all: "All",
-        complete: "Complete",
-        incomplete: "Incomplete",
-      },
-      settingTodo: {
-        titleLanguage: "Language",
-        titleTheme: "Theme",
-        btnSubmitChange: "Change",
-      },
-    };
-  }
   if (language === "ukraine") {
     return {
       titleTodo: "Todo",
@@ -44,4 +29,17 @@ export const languageChangeForTodo = (language) => {
       },
     };
   }
+  return {
+    titleTodo: "Todo",
+    filterTodo: {
+      all: "All",
+      complete: "Complete",
+      incomplete: "Incomplete",
+    },
+    settingTodo: {
+      titleLanguage: "Language",
+      titleTheme: "Theme",
+      btnSubmitChange: "Change",
+    },
+  };
 };
