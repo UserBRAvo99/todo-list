@@ -5,6 +5,7 @@ import CreateTodo from "./createTodo/CreateTodo";
 import FilterTodo from "./filterTodo/FilterTodo";
 import { changeSortListTodo } from "../../../redux/settings";
 import OneItemTodo from "./oneItemTodo/OneItemTodo";
+import { languageChangeForTodo } from "../../../shared/languageChangeForTodo";
 
 import { List, WrapperCreateAndFilter } from "./todoList.style";
 
@@ -50,7 +51,11 @@ const TodoList = () => {
     <>
       <WrapperCreateAndFilter>
         <CreateTodo />
-        <FilterTodo filterTodo={handleFilterTodo} changeTodo={changeListFlex} />
+        <FilterTodo
+          filterTodo={handleFilterTodo}
+          changeTodo={changeListFlex}
+          dataLanguage={languageChangeForTodo(setting.language).filterTodo}
+        />
       </WrapperCreateAndFilter>
       <List $sort={setting.sortTodoList}>
         {todoList.map((todo) => {

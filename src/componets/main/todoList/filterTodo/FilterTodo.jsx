@@ -2,13 +2,13 @@ import SortTodo from "../sortTodo/SortTodo";
 
 import { Btn, Item, List, Span, Wrapper } from "./filterTodo.style";
 
-const FilterTodo = ({ filterTodo, changeTodo }) => {
+const FilterTodo = ({ filterTodo, changeTodo, dataLanguage }) => {
   return (
     <Wrapper>
       <List>
         <Item>
           <Btn onClick={filterTodo} name="all">
-            All
+            {dataLanguage.all}
           </Btn>
         </Item>
         <Item>
@@ -16,7 +16,7 @@ const FilterTodo = ({ filterTodo, changeTodo }) => {
         </Item>
         <Item>
           <Btn onClick={filterTodo} name="complete">
-            Complete
+            {dataLanguage.complete}
           </Btn>
         </Item>
         <Item>
@@ -24,7 +24,7 @@ const FilterTodo = ({ filterTodo, changeTodo }) => {
         </Item>
         <Item>
           <Btn onClick={filterTodo} name="incomplete">
-            Incomplete
+            {dataLanguage.incomplete}
           </Btn>
         </Item>
         <Item className="hidden">
