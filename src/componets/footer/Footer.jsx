@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Footer = () => {
-  return <FooterTodo></FooterTodo>;
+  return <FooterTodo />;
 };
 
 export default Footer;
