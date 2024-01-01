@@ -3,6 +3,15 @@ import styled from "styled-components";
 const Footer = () => {
   return <FooterTodo />;
 };
+//
+//
+//
+//
+//
+//
+//
+
+// комент
 
 export default Footer;
 
