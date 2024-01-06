@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-//
 const initialState = {
   setting: {
     theme: "forest",
