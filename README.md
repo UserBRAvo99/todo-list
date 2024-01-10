@@ -45,9 +45,13 @@ git clone https://github.com/UserBRAvo99/todo-list.git
 
 - Створення та видалення списку справ або задач
 - Фільтрація списку за тегами - всі/виконані/невиконані
-- Зміна розташування задач, колонкою або таблицею
   ![Sort](./src/assets/todoImgSort.png)
+- Зміна розташування задач, колонкою або таблицею
+  ![Sort](./src/assets/todoImgSort1.png)
+- Окреме вікно налаштування
+  ![Sort](./src/assets/todoImgSort2.png)
 - Налаштування мови та теми в вікні налаштувань
+  ![Sort](./src/assets/todoImgSort4.png)
 
 ## Поведінка
 
