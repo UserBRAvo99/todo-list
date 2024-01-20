@@ -15,6 +15,7 @@ function App() {
   const { setting } = useSelector((state) => state.settingSlice);
 
   return (
+    //  ThemeProvider - інструмент керування зміною тем ти стилів в  styled-components. Огортаємо цим тегом всі компоненти які потрібно (або в яких потрібно зінити тему)
     <ThemeProvider
       theme={
         setting.theme === "classic"

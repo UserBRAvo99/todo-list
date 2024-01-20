@@ -1,3 +1,4 @@
+// Global - встановлюємо глобальні стилі, інструмент  styled-components
 import { createGlobalStyle } from "styled-components";
 import { font } from "./utils/font";
 
