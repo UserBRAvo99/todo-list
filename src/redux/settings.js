@@ -1,3 +1,4 @@
+// ще один стейт для роботи з іншим функціоналом.
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {

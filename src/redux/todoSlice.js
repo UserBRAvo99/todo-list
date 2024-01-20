@@ -32,6 +32,8 @@ const todoListSlice = createSlice({
   },
 });
 
+// інійіалізуємо змінну todoListReducer та визначаємо - todoListSlice.reducer. Експортуємо змінну
 export const todoListReducer = todoListSlice.reducer;
 
+//  експортуємо редюсери (методи) deleteTodo, addTodo, changeTodo з todoListSlice.actions і надалі можна буде передавати actions за допомогою діспаттча
 export const { deleteTodo, addTodo, changeTodo } = todoListSlice.actions;
