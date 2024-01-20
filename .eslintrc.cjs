@@ -12,6 +12,7 @@ module.exports = {
   settings: { react: { version: "18.2" } },
   plugins: ["react-refresh"],
   rules: {
+    // налаштування для prop-types, іноді можна змінювати , щоб вайт не сварився на відсутність перевірки типів
     "react/prop-types": 0,
     "react-refresh/only-export-components": [
       "warn",
